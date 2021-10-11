@@ -1,0 +1,47 @@
+
+<mat-toolbar class="mat-elevation-z1" color="mat-primary" fxLayoutGap="12px" >
+
+    <button mat-icon-button color="primary" aria-label="Back" routerLink="/inventory" >
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+
+    <span>Inventory - {{title}}</span>
+
+</mat-toolbar>
+
+<!-- CONTENT -->
+<div class="content"  >
+
+    <mat-card class="card-form-not-full" >
+
+        <form fxLayout="column" fxLayoutAlign="start" fxFlex="1 0 auto" name="form" [formGroup]="form" (submit)="submit()" >
+
+            <mat-form-field appearance="outline">
+                <mat-label>Título</mat-label>
+                <input matInput formControlName="title" required>
+                <mat-error>Título Obrigatório!</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Tipo</mat-label>
+                <mat-select formControlName="type">
+                    <mat-option *ngFor="let type of types" [value]="type.id">
+                        {{type.title}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <div fxLayout="row" fxLayoutAlign="start">
+                <button mat-raised-button type="submit" color="accent" >
+                    Enviar
+                </button>
+            </div>
+
+        </form>
+
+
+    </mat-card>
+
+
+</div>
+<!-- / CONTENT CARD -->

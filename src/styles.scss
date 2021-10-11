@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body
+{
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    color: #666;
+}
+
+.link
+{
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus,
+    &:active
+    {
+        text-decoration: underline;
+    }
+}
+
+.spacer { flex: 1 1 auto; }
+.container { min-height: 100%; }
+.content { padding: 24px; }
+
+.card-form-not-full { max-width: 1000px; }
+
+.datatable-header-cell-template-wrap
+{
+    display: flex;
+    place-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.ngx-datatable.material.single-selection      .datatable-body-row.active,
+.ngx-datatable.material.single-selection      .datatable-body-row.active .datatable-row-group,
+.ngx-datatable.material.multi-selection       .datatable-body-row.active,
+.ngx-datatable.material.multi-selection       .datatable-body-row.active .datatable-row-group,
+.ngx-datatable.material.multi-click-selection .datatable-body-row.active,
+.ngx-datatable.material.multi-click-selection .datatable-body-row.active .datatable-row-group { background-color: #ebebeb !important; }
+
+.datatable-body-cell-label .mat-icon { float: left; }

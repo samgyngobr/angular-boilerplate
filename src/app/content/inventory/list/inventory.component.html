@@ -1,0 +1,42 @@
+
+<mat-toolbar class="mat-elevation-z1" color="mat-primary" fxLayoutGap="12px" fxLayout="row" fxLayoutAlign="space-between center" >
+
+  <span>Inventory</span>
+
+  <button mat-icon-button color="primary" aria-label="Back" routerLink="/inventory/new" >
+    <mat-icon>add_circle_outline</mat-icon>
+  </button>
+
+</mat-toolbar>
+
+
+<div class="content">
+  <ngx-datatable
+    #table
+    class="material"
+    [rows]="data"
+    [columnMode]="'force'"
+    [headerHeight]="48"
+    [footerHeight]="56"
+    [rowHeight]="'auto'"
+    [scrollbarH]="true"
+    [reorderable]="reorderable"
+    [externalPaging]="false"
+    [count]="page.totalElements"
+    [offset]="page.pageNumber"
+    [limit]="page.size"
+    [selected]="selected"
+    [selectionType]="selection"
+    (select)='onSelectDT($event.selected[0]["id"])'
+  >
+
+    <ngx-datatable-column name="Id"      prop="id"    [maxWidth]="80" ></ngx-datatable-column>
+    <ngx-datatable-column name="Produto" prop="title" ></ngx-datatable-column>
+    <ngx-datatable-column name="Edit"    prop="id"    [maxWidth]="80" >
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        <mat-icon color="accent" (click)="$event.stopPropagation(); go(value);" >search</mat-icon>
+      </ng-template>
+    </ngx-datatable-column>
+
+  </ngx-datatable>
+</div>

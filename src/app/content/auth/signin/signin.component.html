@@ -1,0 +1,46 @@
+
+<div class="container" fxLayout="row" fxLayoutAlign="center center" >
+    <mat-card fxLayout="column" fxLayoutAlign="center stretch" fxLayoutGap="15px" >
+
+
+        <h1>Signin</h1>
+
+
+        <form fxLayout="column" fxLayoutAlign="center stretch" [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
+
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Email" formControlName="email" >
+                <mat-error
+                    *ngIf="loginForm.get('email')?.errors?.required">
+                    E-mail é Obrigatorio
+                </mat-error>
+                <mat-error
+                    *ngIf="!loginForm.get('email')?.errors?.required &&
+                            loginForm.get('email')?.errors?.email">
+                    E-mail Inválido
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" placeholder="Password" formControlName="password" maxlength="18" >
+                <mat-error *ngIf="loginForm.get('password')?.errors?.required "> Senha Obrigatória </mat-error>
+                <mat-error *ngIf="loginForm.get('password')?.errors?.minlength"> No minimo 6 caracteres </mat-error>
+                <mat-error *ngIf="loginForm.get('password')?.errors?.maxLength"> No maximo 18 caracteres </mat-error>
+            </mat-form-field>
+
+            <button mat-raised-button color="warn" class="submit-button" aria-label="Entrar" [disabled]="loginForm.invalid">
+                Entrar
+            </button>
+
+        </form>
+
+
+        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" >
+            <a class="link" routerLink="/auth/signup">Signup</a>
+        </div>
+
+
+    </mat-card>
+</div>
