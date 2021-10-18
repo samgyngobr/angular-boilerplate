@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
-import { logging } from 'selenium-webdriver';
 
 const nomes      : string[] = [ 'Emma', 'Olivia', 'Ava', 'Isabella', 'Sophia', 'Charlotte', 'Mia', 'Amelia', 'Harper', 'Evelyn', 'Abigail', 'Emily', 'Elizabeth', 'Mila', 'Ella', 'Avery', 'Sofia', 'Camila', 'Aria', 'Scarlett', 'Victoria', 'Madison', 'Luna', 'Grace', 'Chloe', 'Penelope', 'Layla', 'Riley', 'Zoey', 'Nora', 'Lily', 'Eleanor', 'Hannah', 'Lillian', 'Aubrey', 'Ellie', 'Stella', 'Natalie', 'Zoe', 'Leah', 'Hazel', 'Violet', 'Audrey', 'Brooklyn', 'Bella', 'Claire', 'Skylar', 'Lucy', 'Everly', 'Anna', 'Caroline', 'Nova', 'Emilia', 'Kennedy', 'Samantha', 'Maya', 'Willow', 'Kinsley', 'Naomi', 'Elena', 'Sarah', 'Ariana', 'Allison', 'Gabriella', 'Alice', 'Madelyn', 'Cora', 'Ruby', 'Eva', 'Serenity', 'Autumn', 'Adeline', 'Hailey', 'Gianna', 'Valentina', 'Isla', 'Eliana', 'Quinn', 'Ivy', 'Piper', 'Lydia', 'Alexa', 'Josephine', 'Julia', 'Sophie' ];
 const sobrenomes : string[] = [ 'Altoe', 'Sossai', 'Agrizzi', 'De Angeli', 'Ferreira', 'Braga', 'da Silva', 'Della Coletta', 'Zampirolli', 'Fernandes', 'Alves', 'Costalonga', 'Botteon', 'Caliman', 'de Oliveira', 'Zanette', 'Salvador', 'Silva', 'Zandonadi', 'Pesca', 'Falqueto', 'Tosi', 'da Costa', 'de Souza', 'Gomes', 'Calmon', 'Pereira', 'Sossai detto Pegorer', 'de Almeida', 'de Jesus', 'Martins', 'Balarini', 'Rodrigues', 'Gonçalves', 'Pizzol', 'Moreira', 'Vieira', 'Venturim', 'Bazoni', 'Filete', 'Almeida', 'Correa', 'Oliveira', 'dos Santos', 'Falchetto', 'Barbosa', 'Breda', 'Scaramussa', 'de Barros', 'Marques' ];
@@ -13,13 +12,13 @@ export class FakeBackendInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
 
-    const { url, method, headers, body } = request;
+    //////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////
 
 
-    // wrap in delayed observable to simulate server api call
     return of( null )
       .pipe( mergeMap( handleRoute ) )
-      .pipe( materialize() ) // call materialize and dematerialize to ensure delay even if an error is thrown (https://github.com/Reactive-Extensions/RxJS/issues/648)
+      .pipe( materialize() )
       .pipe( delay( 500 ) )
       .pipe( dematerialize() );
 
@@ -34,29 +33,27 @@ export class FakeBackendInterceptor implements HttpInterceptor {
       {
         //////////////////////////////////////////////////////////////////////////
 
-        case url.endsWith( '/api/login' ) && method === 'POST' :
-          if( body.email == 'teste@teste.com' )
+        case request.url.endsWith( '/api/login' ) && request.method === 'POST' :
+          if( request.body.email == 'teste@teste.com' )
             return login();
           else
             return loginFail();
 
         //////////////////////////////////////////////////////////////////////////
 
-        case url.endsWith('/dashboard') && method === 'GET' :
-          return dashboard();
+        case request.url.endsWith('/dashboard') && request.method === 'GET' : return dashboard();
 
         //////////////////////////////////////////////////////////////////////////
 
-        case url.endsWith('/posts') && method === 'GET' :
-          return posts();
+        case request.url.endsWith('/posts') && request.method === 'GET' : return posts();
 
         //////////////////////////////////////////////////////////////////////////
 
-        case url.endsWith('/inventory'       ) && method === 'GET'  : return products();
-        case url.endsWith('/inventory/create') && method === 'GET'  : return _new();
-        case url.endsWith('/inventory/create') && method === 'POST' : return retOk();
-        case url.endsWith('/inventory/1'     ) && method === 'GET'  : return edit();
-        case url.endsWith('/inventory/1'     ) && method === 'POST' : return retOk();
+        case request.url.endsWith('/inventory'       ) && request.method === 'GET'  : return products();
+        case request.url.endsWith('/inventory/create') && request.method === 'GET'  : return _new();
+        case request.url.endsWith('/inventory/create') && request.method === 'POST' : return retOk();
+        case request.url.endsWith('/inventory/1'     ) && request.method === 'GET'  : return edit();
+        case request.url.endsWith('/inventory/1'     ) && request.method === 'POST' : return retOk();
 
         //////////////////////////////////////////////////////////////////////////
 
@@ -300,7 +297,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
     function isLoggedIn()
     {
-      return headers.get('Authorization') === 'Bearer fake-jwt-token';
+      return request.headers.get('Authorization') === 'Bearer fake-jwt-token';
     }
 
 
