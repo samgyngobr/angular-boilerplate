@@ -44,3 +44,19 @@ body
 .ngx-datatable.material.multi-click-selection .datatable-body-row.active .datatable-row-group { background-color: #ebebeb !important; }
 
 .datatable-body-cell-label .mat-icon { float: left; }
+
+
+mat-toolbar
+{
+    mat-icon
+    {
+        margin-right: 16px;
+    }
+
+    .mat-icon-button
+    {
+        mat-icon {
+            margin-right: 0 !important;
+        }
+    }
+}

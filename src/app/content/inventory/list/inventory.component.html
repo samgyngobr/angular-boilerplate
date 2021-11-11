@@ -1,7 +1,10 @@
 
 <mat-toolbar class="mat-elevation-z1" color="mat-primary" fxLayoutGap="12px" fxLayout="row" fxLayoutAlign="space-between center" >
 
-  <span>Inventory</span>
+  <div fxLayout="row" fxLayoutAlign="start center" >
+    <mat-icon mat-list-icon>inventory</mat-icon>
+    <span>Inventory</span>
+  </div>
 
   <button mat-icon-button color="primary" aria-label="Back" routerLink="/inventory/new" >
     <mat-icon>add_circle_outline</mat-icon>

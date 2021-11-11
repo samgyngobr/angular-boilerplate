@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 
 import { DashboardComponent } from './dashboard.component';
 
@@ -22,7 +23,8 @@ const routes = [
     CommonModule,
     RouterModule.forChild( routes ),
 
-    MatToolbarModule
+    MatToolbarModule,
+    MatIconModule
   ],
   exports: [ RouterModule ],
   providers: [ DashboardService ]

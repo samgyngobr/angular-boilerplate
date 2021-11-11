@@ -6,10 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 import { ComponentsModule } from './components/components.module';
-//import { DashboardModule } from './content/dashboard/dashboard.module';
 import { AuthModule } from './content/auth/auth.module';
 import { ErrorModule } from './content/error/error.module';
-
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -25,7 +23,6 @@ import { ErrorInterceptor } from './interceptors/error.interceptor';
     HttpClientModule,
     MatSnackBarModule,
     ComponentsModule,
-    //DashboardModule,
     AuthModule,
     ErrorModule,
     AppRoutingModule
