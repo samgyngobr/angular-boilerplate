@@ -85,8 +85,8 @@ export class InventoryService implements Resolve<any>
       this.id = id;
 
       let url : string = ( id == 'new' )
-                  ? environment.path + '/inventory/create'
-                  : environment.path + '/inventory/' + this.id;
+        ? environment.path + '/inventory/create'
+        : environment.path + '/inventory/' + this.id;
 
       this._httpClient.get( url )
         .subscribe( ( response: any ) => {

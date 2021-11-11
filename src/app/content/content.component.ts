@@ -1,20 +1,23 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 
-import { SidebarService } from '../../../services/sidebar.service';
+import { SidebarService } from '../services/sidebar.service';
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  selector: 'app-content',
+  templateUrl: './content.component.html',
+  styleUrls: ['./content.component.scss']
 })
-export class MainComponent implements OnInit
+export class ContentComponent implements OnInit
 {
+
   @ViewChild('drawer') public drawer!: MatSidenav;
+
 
   constructor( private _sidebarService: SidebarService )
   {
   }
+
 
   ngOnInit()
   {
@@ -22,5 +25,6 @@ export class MainComponent implements OnInit
       this.drawer?.toggle();
     });
   }
+
 
 }

@@ -3,9 +3,9 @@ import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTT
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 
-const nomes      : string[] = [ 'Emma', 'Olivia', 'Ava', 'Isabella', 'Sophia', 'Charlotte', 'Mia', 'Amelia', 'Harper', 'Evelyn', 'Abigail', 'Emily', 'Elizabeth', 'Mila', 'Ella', 'Avery', 'Sofia', 'Camila', 'Aria', 'Scarlett', 'Victoria', 'Madison', 'Luna', 'Grace', 'Chloe', 'Penelope', 'Layla', 'Riley', 'Zoey', 'Nora', 'Lily', 'Eleanor', 'Hannah', 'Lillian', 'Aubrey', 'Ellie', 'Stella', 'Natalie', 'Zoe', 'Leah', 'Hazel', 'Violet', 'Audrey', 'Brooklyn', 'Bella', 'Claire', 'Skylar', 'Lucy', 'Everly', 'Anna', 'Caroline', 'Nova', 'Emilia', 'Kennedy', 'Samantha', 'Maya', 'Willow', 'Kinsley', 'Naomi', 'Elena', 'Sarah', 'Ariana', 'Allison', 'Gabriella', 'Alice', 'Madelyn', 'Cora', 'Ruby', 'Eva', 'Serenity', 'Autumn', 'Adeline', 'Hailey', 'Gianna', 'Valentina', 'Isla', 'Eliana', 'Quinn', 'Ivy', 'Piper', 'Lydia', 'Alexa', 'Josephine', 'Julia', 'Sophie' ];
-const sobrenomes : string[] = [ 'Altoe', 'Sossai', 'Agrizzi', 'De Angeli', 'Ferreira', 'Braga', 'da Silva', 'Della Coletta', 'Zampirolli', 'Fernandes', 'Alves', 'Costalonga', 'Botteon', 'Caliman', 'de Oliveira', 'Zanette', 'Salvador', 'Silva', 'Zandonadi', 'Pesca', 'Falqueto', 'Tosi', 'da Costa', 'de Souza', 'Gomes', 'Calmon', 'Pereira', 'Sossai detto Pegorer', 'de Almeida', 'de Jesus', 'Martins', 'Balarini', 'Rodrigues', 'Gonçalves', 'Pizzol', 'Moreira', 'Vieira', 'Venturim', 'Bazoni', 'Filete', 'Almeida', 'Correa', 'Oliveira', 'dos Santos', 'Falchetto', 'Barbosa', 'Breda', 'Scaramussa', 'de Barros', 'Marques' ];
-const produtos   : string[] = [ 'Pepsi', 'Coca Cola', 'Skoll', 'Biz', 'LaFruit', 'Danone' ];
+const names    : string[] = [ 'Emma', 'Olivia', 'Ava', 'Isabella', 'Sophia', 'Charlotte', 'Mia', 'Amelia', 'Harper', 'Evelyn', 'Abigail', 'Emily', 'Elizabeth', 'Mila', 'Ella', 'Avery', 'Sofia', 'Camila', 'Aria', 'Scarlett', 'Victoria', 'Madison', 'Luna', 'Grace', 'Chloe', 'Penelope', 'Layla', 'Riley', 'Zoey', 'Nora', 'Lily', 'Eleanor', 'Hannah', 'Lillian', 'Aubrey', 'Ellie', 'Stella', 'Natalie', 'Zoe', 'Leah', 'Hazel', 'Violet', 'Audrey', 'Brooklyn', 'Bella', 'Claire', 'Skylar', 'Lucy', 'Everly', 'Anna', 'Caroline', 'Nova', 'Emilia', 'Kennedy', 'Samantha', 'Maya', 'Willow', 'Kinsley', 'Naomi', 'Elena', 'Sarah', 'Ariana', 'Allison', 'Gabriella', 'Alice', 'Madelyn', 'Cora', 'Ruby', 'Eva', 'Serenity', 'Autumn', 'Adeline', 'Hailey', 'Gianna', 'Valentina', 'Isla', 'Eliana', 'Quinn', 'Ivy', 'Piper', 'Lydia', 'Alexa', 'Josephine', 'Julia', 'Sophie' ];
+const surnames : string[] = [ 'Altoe', 'Sossai', 'Agrizzi', 'De Angeli', 'Ferreira', 'Braga', 'da Silva', 'Della Coletta', 'Zampirolli', 'Fernandes', 'Alves', 'Costalonga', 'Botteon', 'Caliman', 'de Oliveira', 'Zanette', 'Salvador', 'Silva', 'Zandonadi', 'Pesca', 'Falqueto', 'Tosi', 'da Costa', 'de Souza', 'Gomes', 'Calmon', 'Pereira', 'Sossai detto Pegorer', 'de Almeida', 'de Jesus', 'Martins', 'Balarini', 'Rodrigues', 'Gonçalves', 'Pizzol', 'Moreira', 'Vieira', 'Venturim', 'Bazoni', 'Filete', 'Almeida', 'Correa', 'Oliveira', 'dos Santos', 'Falchetto', 'Barbosa', 'Breda', 'Scaramussa', 'de Barros', 'Marques' ];
+const products : string[] = [ 'Pepsi', 'Coca Cola', 'Skoll', 'Biz', 'LaFruit', 'Danone' ];
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
@@ -49,7 +49,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
         //////////////////////////////////////////////////////////////////////////
 
-        case request.url.endsWith('/inventory'       ) && request.method === 'GET'  : return products();
+        case request.url.endsWith('/inventory'       ) && request.method === 'GET'  : return product();
         case request.url.endsWith('/inventory/create') && request.method === 'GET'  : return _new();
         case request.url.endsWith('/inventory/create') && request.method === 'POST' : return retOk();
         case request.url.endsWith('/inventory/1'     ) && request.method === 'GET'  : return edit();
@@ -203,7 +203,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-    function products()
+    function product()
     {
       let ar  = [];
       let tot = 50;
@@ -212,7 +212,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
       {
         ar.push({
           "id"    : 1, //Math.floor( Math.random() * 100) + 1,
-          "title" : produtos[ Math.floor( Math.random() * produtos.length ) ],
+          "title" : products[ Math.floor( Math.random() * products.length ) ],
         });
       }
 
@@ -239,9 +239,9 @@ export class FakeBackendInterceptor implements HttpInterceptor {
           "id"             : Math.floor( Math.random() * 100) + 1,
           "data"           : Math.floor( Math.random() * (31 - 1) + 1 ) + "/" + Math.floor( Math.random() * (12 - 1) + 1 ) + "/2019",
           "lastInteraction": Math.floor( Math.random() * (31 - 1) + 1 ) + "/" + Math.floor( Math.random() * (12 - 1) + 1 ) + "/2020",
-          "name"           : nomes[Math.floor(Math.random() * nomes.length)] + ' ' + sobrenomes[Math.floor(Math.random() * sobrenomes.length)] + ' ' + sobrenomes[Math.floor(Math.random() * sobrenomes.length)],
+          "name"           : names[Math.floor(Math.random() * names.length)] + ' ' + surnames[Math.floor(Math.random() * surnames.length)] + ' ' + surnames[Math.floor(Math.random() * surnames.length)],
           "produto"        : 'Prod.',
-          "atendente"      : nomes[Math.floor(Math.random() * nomes.length)] + ' ' + sobrenomes[Math.floor(Math.random() * sobrenomes.length)] + ' ' + sobrenomes[Math.floor(Math.random() * sobrenomes.length)],
+          "atendente"      : names[Math.floor(Math.random() * names.length)] + ' ' + surnames[Math.floor(Math.random() * surnames.length)] + ' ' + surnames[Math.floor(Math.random() * surnames.length)],
           "unidade"        : 'Unidade',
           "equipe"         : 'Equipe',
           "pontoConversao" : 'pc',
