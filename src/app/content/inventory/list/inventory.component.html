@@ -13,16 +13,19 @@
 </mat-toolbar>
 
 
-<div class="content">
+<div class="content content-table">
   <ngx-datatable
     #table
-    class="material"
+    class="material fullscreen"
+    style="max-height: 100%;"
     [rows]="data"
     [columnMode]="'force'"
     [headerHeight]="48"
     [footerHeight]="56"
     [rowHeight]="'auto'"
     [scrollbarH]="true"
+    [scrollbarV]="true"
+    [rowHeight]="50"
     [reorderable]="reorderable"
     [externalPaging]="false"
     [count]="page.totalElements"

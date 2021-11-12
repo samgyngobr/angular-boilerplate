@@ -55,8 +55,36 @@ mat-toolbar
 
     .mat-icon-button
     {
-        mat-icon {
+        mat-icon
+        {
             margin-right: 0 !important;
+        }
+    }
+
+    .right-button
+    {
+        margin-right: 6px !important;
+        margin-left: -6px !important;
+    }
+}
+
+
+.mat-drawer-content
+{
+    position: absolute !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    .sidenav-content
+    {
+        overflow-y: auto;
+        height: 100%;
+
+        .content-table
+        {
+            height: calc(100% - 112px);
         }
     }
 }
