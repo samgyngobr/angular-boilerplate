@@ -126,7 +126,166 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     function dashboard()
     {
       return ok({
-        content : 'dashboard content',
+        chart1 : {
+          chart: {
+            height: 80,
+            type: 'area',
+            sparkline: {
+              enabled: true
+            },
+            group: 'sparklines',
+          },
+          dataLabels: {
+            enabled: false
+          },
+          stroke: {
+            width: 3,
+            curve: 'smooth'
+          },
+          fill: {
+            type: 'gradient',
+            gradient: {
+              shadeIntensity: 1,
+              opacityFrom: 0.5,
+              opacityTo: 0,
+            }
+          },
+          series: [{
+            name: 'series1',
+            data: [60, 15, 50, 30, 70]
+          }, ],
+          colors: ['#0084ff'],
+
+          xaxis: {
+            type: 'datetime',
+            categories: ['2018-08-19T00:00:00', '2018-09-19T01:30:00', '2018-10-19T02:30:00', '2018-11-19T01:30:00', '2018-12-19T01:30:00'],
+          },
+          tooltip: {
+            x: {
+              format: 'dd/MM/yy HH:mm'
+            },
+          }
+        },
+        chart2 : {
+          chart: {
+            height: 80,
+            type: 'area',
+            sparkline: {
+              enabled: true
+            },
+            group: 'sparklines',
+          },
+          dataLabels: {
+            enabled: false
+          },
+          stroke: {
+            width: 3,
+            curve: 'smooth'
+          },
+          fill: {
+            type: 'gradient',
+            gradient: {
+              shadeIntensity: 1,
+              opacityFrom: 0.5,
+              opacityTo: 0,
+            }
+          },
+          series: [{
+            name: 'series1',
+            data: [70, 40, 60, 30, 60]
+          }, ],
+          colors: ['#ffd400'],
+          xaxis: {
+            type: 'datetime',
+            categories: ['2018-08-19T00:00:00', '2018-09-19T01:30:00', '2018-10-19T02:30:00', '2018-11-19T01:30:00', '2018-12-19T01:30:00'],
+          },
+          tooltip: {
+            x: {
+              format: 'dd/MM/yy HH:mm'
+            },
+          }
+        },
+        chart3 : {
+          chart: {
+            height: 80,
+            type: 'area',
+            sparkline: {
+              enabled: true
+            },
+            group: 'sparklines',
+          },
+          dataLabels: {
+            enabled: false
+          },
+          stroke: {
+            width: 3,
+            curve: 'smooth'
+          },
+          fill: {
+            type: 'gradient',
+            gradient: {
+              shadeIntensity: 1,
+              opacityFrom: 0.5,
+              opacityTo: 0,
+            }
+          },
+          series: [{
+            name: 'series1',
+            data: [60, 40, 60, 40, 70]
+          }, ],
+          colors: ['#00ca00'],
+
+          xaxis: {
+            type: 'datetime',
+            categories: ['2018-08-19T00:00:00', '2018-09-19T01:30:00', '2018-10-19T02:30:00', '2018-11-19T01:30:00', '2018-12-19T01:30:00'],
+          },
+          tooltip: {
+            x: {
+              format: 'dd/MM/yy HH:mm'
+            },
+          }
+        },
+        chart4 : {
+          chart: {
+            height: 80,
+            type: 'area',
+            sparkline: {
+              enabled: true
+            },
+            group: 'sparklines',
+
+          },
+          dataLabels: {
+            enabled: false
+          },
+          stroke: {
+            width: 3,
+            curve: 'smooth'
+          },
+          fill: {
+            type: 'gradient',
+            gradient: {
+              shadeIntensity: 1,
+              opacityFrom: 0.5,
+              opacityTo: 0,
+            }
+          },
+          series: [{
+            name: 'series1',
+            data: [75, 30, 60, 35, 60]
+          }, ],
+          colors: ['#e64141'],
+
+          xaxis: {
+            type: 'datetime',
+            categories: ['2018-08-19T00:00:00', '2018-09-19T01:30:00', '2018-10-19T02:30:00', '2018-11-19T01:30:00', '2018-12-19T01:30:00'],
+          },
+          tooltip: {
+            x: {
+              format: 'dd/MM/yy HH:mm'
+            },
+          }
+        }
       });
     }
 
