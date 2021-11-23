@@ -125,8 +125,9 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
     function dashboard()
     {
-      return ok({
-        chart1 : {
+      return ok([
+        {
+          title : 'chart1',
           chart: {
             height: 80,
             type: 'area',
@@ -166,7 +167,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             },
           }
         },
-        chart2 : {
+        {
+          title : 'chart2',
           chart: {
             height: 80,
             type: 'area',
@@ -205,7 +207,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             },
           }
         },
-        chart3 : {
+        {
+          title : 'chart3',
           chart: {
             height: 80,
             type: 'area',
@@ -245,7 +248,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             },
           }
         },
-        chart4 : {
+        {
+          title : 'chart4',
           chart: {
             height: 80,
             type: 'area',
@@ -253,7 +257,6 @@ export class FakeBackendInterceptor implements HttpInterceptor {
               enabled: true
             },
             group: 'sparklines',
-
           },
           dataLabels: {
             enabled: false
@@ -275,7 +278,6 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             data: [75, 30, 60, 35, 60]
           }, ],
           colors: ['#e64141'],
-
           xaxis: {
             type: 'datetime',
             categories: ['2018-08-19T00:00:00', '2018-09-19T01:30:00', '2018-10-19T02:30:00', '2018-11-19T01:30:00', '2018-12-19T01:30:00'],
@@ -286,7 +288,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             },
           }
         }
-      });
+      ]);
     }
 
 

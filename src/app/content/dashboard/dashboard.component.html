@@ -4,60 +4,23 @@
     <span>Dashboard</span>
 </mat-toolbar>
 
+
 <div class="content">
     <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px" >
 
-        <mat-card class="chart-card" fxFlex="25">
-            <div id="chart">
-                <apx-chart
-                  [series]="data.chart1.series"
-                  [chart]="data.chart1.chart"
-                  [xaxis]="data.chart1.xaxis"
-                  [stroke]="data.chart1.stroke"
-                  [tooltip]="data.chart1.tooltip"
-                  [dataLabels]="data.chart1.dataLabels"
-                ></apx-chart>
-            </div>
+
+        <mat-card class="chart-card" fxFlex="25" *ngFor="let i of data" >
+            <h2 class="text-center">{{i.title}}</h2>
+            <apx-chart
+                [series]="i.series"
+                [chart]="i.chart"
+                [xaxis]="i.xaxis"
+                [stroke]="i.stroke"
+                [tooltip]="i.tooltip"
+                [dataLabels]="i.dataLabels"
+            ></apx-chart>
         </mat-card>
 
-        <mat-card class="chart-card" fxFlex="25">
-            <div id="chart">
-                <apx-chart
-                  [series]="data.chart2.series"
-                  [chart]="data.chart2.chart"
-                  [xaxis]="data.chart2.xaxis"
-                  [stroke]="data.chart2.stroke"
-                  [tooltip]="data.chart2.tooltip"
-                  [dataLabels]="data.chart2.dataLabels"
-                ></apx-chart>
-            </div>
-        </mat-card>
-
-        <mat-card class="chart-card" fxFlex="25">
-            <div id="chart">
-                <apx-chart
-                  [series]="data.chart3.series"
-                  [chart]="data.chart3.chart"
-                  [xaxis]="data.chart3.xaxis"
-                  [stroke]="data.chart3.stroke"
-                  [tooltip]="data.chart3.tooltip"
-                  [dataLabels]="data.chart3.dataLabels"
-                ></apx-chart>
-            </div>
-        </mat-card>
-
-        <mat-card class="chart-card" fxFlex="25">
-            <div id="chart">
-                <apx-chart
-                  [series]="data.chart4.series"
-                  [chart]="data.chart4.chart"
-                  [xaxis]="data.chart4.xaxis"
-                  [stroke]="data.chart4.stroke"
-                  [tooltip]="data.chart4.tooltip"
-                  [dataLabels]="data.chart4.dataLabels"
-                ></apx-chart>
-            </div>
-        </mat-card>
 
     </div>
 </div>

@@ -22,6 +22,10 @@ body
     }
 }
 
+.text-center { text-align: center !important; }
+.text-left   { text-align: left   !important; }
+.text-right  { text-align: right  !important; }
+
 .spacer { flex: 1 1 auto; }
 .container { min-height: 100%; }
 .content { padding: 24px; }
