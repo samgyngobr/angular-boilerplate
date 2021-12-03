@@ -6,20 +6,24 @@
 
 
 <div class="content">
-    <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="16px" >
+    <div fxLayout="row wrap" fxLayoutAlign="space-between start" fxLayoutGap="16px grid" >
 
+        <div *ngFor="let i of data" fxFlex="25%" fxFlex.sm="50%" fxFlex.xs="100%" >
+            <mat-card class="chart-card" >
 
-        <mat-card class="chart-card" fxFlex="25" *ngFor="let i of data" >
-            <h2 class="text-center">{{i.title}}</h2>
-            <apx-chart
-                [series]="i.series"
-                [chart]="i.chart"
-                [xaxis]="i.xaxis"
-                [stroke]="i.stroke"
-                [tooltip]="i.tooltip"
-                [dataLabels]="i.dataLabels"
-            ></apx-chart>
-        </mat-card>
+                <h2 class="text-center">{{i.title}}</h2>
+
+                <apx-chart
+                    [series]="i.series"
+                    [chart]="i.chart"
+                    [xaxis]="i.xaxis"
+                    [stroke]="i.stroke"
+                    [tooltip]="i.tooltip"
+                    [dataLabels]="i.dataLabels"
+                ></apx-chart>
+
+            </mat-card>
+        </div>
 
 
     </div>

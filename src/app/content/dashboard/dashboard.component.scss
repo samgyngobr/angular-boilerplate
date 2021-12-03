@@ -4,8 +4,10 @@ app-dashboard
     .chart-card
     {
         padding: 0 !important;
+        margin-bottom: 16px;
 
-        h2 {
+        h2
+        {
             margin-top: 16px !important;
             margin-bottom: 0;
         }
