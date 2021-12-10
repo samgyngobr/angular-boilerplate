@@ -6,9 +6,29 @@
 
 
 <div class="content">
+
+
+    <div fxLayout="row" fxLayoutAlign="stretch" >
+        <mat-card class="chart-card" >
+            <apx-chart
+                [series]="data.bannerChart.series"
+                [chart]="data.bannerChart.chart"
+                [yaxis]="data.bannerChart.yaxis"
+                [xaxis]="data.bannerChart.xaxis"
+                [labels]="data.bannerChart.labels"
+                [stroke]="data.bannerChart.stroke"
+                [markers]="data.bannerChart.markers"
+                [fill]="data.bannerChart.fill"
+                [tooltip]="data.bannerChart.tooltip"
+                [dataLabels]="data.bannerChart.dataLabels"
+            ></apx-chart>
+        </mat-card>
+    </div>
+
+
     <div fxLayout="row wrap" fxLayoutAlign="space-between start" fxLayoutGap="16px grid" >
 
-        <div *ngFor="let i of data" fxFlex="25%" fxFlex.sm="50%" fxFlex.xs="100%" >
+        <div *ngFor="let i of data.chartz" fxFlex="25%" fxFlex.sm="50%" fxFlex.xs="100%" >
             <mat-card class="chart-card" >
 
                 <h2 class="text-center">{{i.title}}</h2>
@@ -25,6 +45,7 @@
             </mat-card>
         </div>
 
-
     </div>
+
+
 </div>
