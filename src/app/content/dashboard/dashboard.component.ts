@@ -18,6 +18,18 @@ export class DashboardComponent implements OnInit, OnDestroy
 
   public data : any = null;
 
+  tooltip : any = {
+    shared: true,
+    intersect: false,
+    y: {
+      function(y:any) {
+        if (typeof y !== "undefined") {
+          return y.toFixed(0) + " points";
+        }
+        return y;
+      }
+    }
+  };
 
 
   /**

@@ -128,79 +128,87 @@ export class FakeBackendInterceptor implements HttpInterceptor {
       return ok({
         chartz : [
           {
-            title : 'chart1',
-            chart: { height: 80, type: 'area', sparkline: { enabled: true }, group: 'sparklines', },
+            title: 'chart1',
+            chart: { height: 80, type: 'area', sparkline: { enabled: true }, group: 'sparklines' },
             dataLabels: { enabled: false },
             stroke: { width: 3, curve: 'smooth' },
-            fill: { type: 'gradient', gradient: { shadeIntensity: 1, opacityFrom: 0.5, opacityTo: 0, } },
-            series: [{ name: 'series1', data: [60, 15, 50, 30, 70] }, ],
+            fill: { type: 'gradient', gradient: { shadeIntensity: 1, opacityFrom: 0.5, opacityTo: 0 } },
+            series: [{ name: 'series1', data: [60, 15, 50, 30, 70] } ],
             colors: ['#0084ff'],
-            xaxis: { type: 'datetime', categories: ['2018-08-19T00:00:00', '2018-09-19T01:30:00', '2018-10-19T02:30:00', '2018-11-19T01:30:00', '2018-12-19T01:30:00'], },
-            tooltip: { x: { format: 'dd/MM/yy HH:mm' }, }
+            xaxis: { type: 'datetime', categories: ['2018-08-19T00:00:00', '2018-09-19T01:30:00', '2018-10-19T02:30:00', '2018-11-19T01:30:00', '2018-12-19T01:30:00'] },
+            tooltip: { x: { format: 'dd/MM/yy HH:mm' } }
           },
           {
-            title : 'chart2',
-            chart: { height: 80, type: 'area', sparkline: { enabled: true }, group: 'sparklines', },
+            title: 'chart2',
+            chart: { height: 80, type: 'area', sparkline: { enabled: true }, group: 'sparklines' },
             dataLabels: { enabled: false },
             stroke: { width: 3, curve: 'smooth' },
-            fill: { type: 'gradient', gradient: { shadeIntensity: 1, opacityFrom: 0.5, opacityTo: 0, } },
-            series: [{ name: 'series1', data: [70, 40, 60, 30, 60] }, ],
+            fill: { type: 'gradient', gradient: { shadeIntensity: 1, opacityFrom: 0.5, opacityTo: 0 } },
+            series: [{ name: 'series1', data: [70, 40, 60, 30, 60] } ],
             colors: ['#ffd400'],
-            xaxis: { type: 'datetime', categories: ['2018-08-19T00:00:00', '2018-09-19T01:30:00', '2018-10-19T02:30:00', '2018-11-19T01:30:00', '2018-12-19T01:30:00'], },
-            tooltip: { x: { format: 'dd/MM/yy HH:mm' }, }
+            xaxis: { type: 'datetime', categories: ['2018-08-19T00:00:00', '2018-09-19T01:30:00', '2018-10-19T02:30:00', '2018-11-19T01:30:00', '2018-12-19T01:30:00'] },
+            tooltip: { x: { format: 'dd/MM/yy HH:mm' } }
           },
           {
-            title : 'chart3',
-            chart: { height: 80, type: 'area', sparkline: { enabled: true }, group: 'sparklines', },
+            title: 'chart3',
+            chart: { height: 80, type: 'area', sparkline: { enabled: true }, group: 'sparklines' },
             dataLabels: { enabled: false },
             stroke: { width: 3, curve: 'smooth' },
-            fill: { type: 'gradient', gradient: { shadeIntensity: 1, opacityFrom: 0.5, opacityTo: 0, } },
-            series: [{ name: 'series1', data: [60, 40, 60, 40, 70] }, ],
+            fill: { type: 'gradient', gradient: { shadeIntensity: 1, opacityFrom: 0.5, opacityTo: 0 } },
+            series: [{ name: 'series1', data: [60, 40, 60, 40, 70] } ],
             colors: ['#00ca00'],
-            xaxis: { type: 'datetime', categories: ['2018-08-19T00:00:00', '2018-09-19T01:30:00', '2018-10-19T02:30:00', '2018-11-19T01:30:00', '2018-12-19T01:30:00'], },
-            tooltip: { x: { format: 'dd/MM/yy HH:mm' }, }
+            xaxis: { type: 'datetime', categories: ['2018-08-19T00:00:00', '2018-09-19T01:30:00', '2018-10-19T02:30:00', '2018-11-19T01:30:00', '2018-12-19T01:30:00'] },
+            tooltip: { x: { format: 'dd/MM/yy HH:mm' } }
           },
           {
-            title : 'chart4',
-            chart: { height: 80, type: 'area', sparkline: { enabled: true }, group: 'sparklines', },
+            title: 'chart4',
+            chart: { height: 80, type: 'area', sparkline: { enabled: true }, group: 'sparklines' },
             dataLabels: { enabled: false },
             stroke: { width: 3, curve: 'smooth' },
-            fill: { type: 'gradient', gradient: { shadeIntensity: 1, opacityFrom: 0.5, opacityTo: 0, } },
-            series: [{ name: 'series1', data: [75, 30, 60, 35, 60] }, ],
+            fill: { type: 'gradient', gradient: { shadeIntensity: 1, opacityFrom: 0.5, opacityTo: 0 } },
+            series: [{ name: 'series1', data: [75, 30, 60, 35, 60] } ],
             colors: ['#e64141'],
-            xaxis: { type: 'datetime', categories: ['2018-08-19T00:00:00', '2018-09-19T01:30:00', '2018-10-19T02:30:00', '2018-11-19T01:30:00', '2018-12-19T01:30:00'], },
-            tooltip: { x: { format: 'dd/MM/yy HH:mm' }, }
+            xaxis: { type: 'datetime', categories: ['2018-08-19T00:00:00', '2018-09-19T01:30:00', '2018-10-19T02:30:00', '2018-11-19T01:30:00', '2018-12-19T01:30:00'] },
+            tooltip: { x: { format: 'dd/MM/yy HH:mm' } }
           }
         ],
-        bannerChart : {
+        bannerChart: {
           series: [
-            { name: "TEAM A", type: "area", data: [44, 55, 31, 47, 31, 43, 26, 41, 31, 47, 33] },
-            { name: "TEAM B", type: "line", data: [55, 69, 45, 61, 43, 54, 37, 52, 44, 61, 43] }
+            { name: "TEAM A", type: "area", data: [44, 55, 31, 47, 31, 43, 26, 41, 31, 47, 33] }
           ],
-          chart: { height: 350, type: "line" },
-          dataLabels: { enabled: false },
+          chart: { height: 350, type: "area" },
+          dataLabels: { enabled : false },
           stroke: { curve: "smooth" },
           fill: { type: "solid", opacity: [0.35, 1] },
           labels: [ "Dec 01", "Dec 02", "Dec 03", "Dec 04", "Dec 05", "Dec 06", "Dec 07", "Dec 08", "Dec 09 ", "Dec 10", "Dec 11" ],
           markers: { size: 0 },
           yaxis: [
-            { title: { text: "Series A" } },
-            { opposite: true, title: { text: "Series B" } }
+            { title: false },
+            { opposite: true, title: false }
           ],
           xaxis: { labels: { trim: false } },
-          tooltip: {
-            shared: true,
-            intersect: false,
-            y: {
-              function(y:any) {
-                if (typeof y !== "undefined") {
-                  return y.toFixed(0) + " points";
-                }
-                return y;
-              }
+          // tooltip: {}
+        },
+        heat : [{
+          "date": "2021-01-01",
+          "total": 17164,
+          "details": [
+            {
+              "name": "Project 1",
+              "date": "2021-01-01 12:30:45",
+              "value": 9192
+            }, {
+              "name": "Project 2",
+              "date": "2021-01-01 13:37:00",
+              "value": 6753
+            },
+            {
+              "name": "Project N",
+              "date": "2021-01-01 17:52:41",
+              "value": 1219
             }
-          }
-        }
+          ]
+        }]
       });
     }
 

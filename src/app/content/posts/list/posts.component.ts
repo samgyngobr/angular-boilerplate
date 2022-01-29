@@ -49,7 +49,7 @@ export class PostsComponent implements OnInit, OnDestroy
   ngOnInit(): void
   {
     this._postsService.onDataLoaded
-      .pipe(takeUntil(this._unsubscribeAll))
+      .pipe( takeUntil( this._unsubscribeAll ) )
       .subscribe( ( res : any ) => {
 
         this.data = res.data;

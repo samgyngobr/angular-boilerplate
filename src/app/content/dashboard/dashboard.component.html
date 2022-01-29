@@ -10,18 +10,20 @@
 
     <div fxLayout="row" fxLayoutAlign="stretch" >
         <mat-card class="chart-card" >
+
             <apx-chart
-                [series]="data.bannerChart.series"
-                [chart]="data.bannerChart.chart"
-                [yaxis]="data.bannerChart.yaxis"
-                [xaxis]="data.bannerChart.xaxis"
-                [labels]="data.bannerChart.labels"
-                [stroke]="data.bannerChart.stroke"
-                [markers]="data.bannerChart.markers"
-                [fill]="data.bannerChart.fill"
-                [tooltip]="data.bannerChart.tooltip"
-                [dataLabels]="data.bannerChart.dataLabels"
+                [series]     = "data.bannerChart.series"
+                [chart]      = "data.bannerChart.chart"
+                [yaxis]      = "data.bannerChart.yaxis"
+                [xaxis]      = "data.bannerChart.xaxis"
+                [labels]     = "data.bannerChart.labels"
+                [stroke]     = "data.bannerChart.stroke"
+                [markers]    = "data.bannerChart.markers"
+                [fill]       = "data.bannerChart.fill"
+                [tooltip]    = tooltip
+                [dataLabels] = "data.bannerChart.dataLabels"
             ></apx-chart>
+
         </mat-card>
     </div>
 
@@ -34,18 +36,19 @@
                 <h2 class="text-center">{{i.title}}</h2>
 
                 <apx-chart
-                    [series]="i.series"
-                    [chart]="i.chart"
-                    [xaxis]="i.xaxis"
-                    [stroke]="i.stroke"
-                    [tooltip]="i.tooltip"
-                    [dataLabels]="i.dataLabels"
+                    [series]     = "i.series"
+                    [chart]      = "i.chart"
+                    [xaxis]      = "i.xaxis"
+                    [stroke]     = "i.stroke"
+                    [tooltip]    = "i.tooltip"
+                    [dataLabels] = "i.dataLabels"
                 ></apx-chart>
 
             </mat-card>
         </div>
 
     </div>
+
 
 
 </div>
