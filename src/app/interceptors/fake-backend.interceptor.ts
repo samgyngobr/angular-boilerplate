@@ -173,21 +173,35 @@ export class FakeBackendInterceptor implements HttpInterceptor {
           }
         ],
         bannerChart: {
-          series: [
-            { name: "TEAM A", type: "area", data: [44, 55, 31, 47, 31, 43, 26, 41, 31, 47, 33] }
-          ],
-          chart: { height: 350, type: "area" },
-          dataLabels: { enabled : false },
-          stroke: { curve: "smooth" },
-          fill: { type: "solid", opacity: [0.35, 1] },
-          labels: [ "Dec 01", "Dec 02", "Dec 03", "Dec 04", "Dec 05", "Dec 06", "Dec 07", "Dec 08", "Dec 09 ", "Dec 10", "Dec 11" ],
-          markers: { size: 0 },
-          yaxis: [
-            { title: false },
-            { opposite: true, title: false }
-          ],
-          xaxis: { labels: { trim: false } },
-          // tooltip: {}
+          title: 'chart4',
+          chart: { height: 350, type: 'area', sparkline: { enabled: true }, group: 'sparklines' },
+          dataLabels: { enabled: false },
+          stroke: { width: 3, curve: 'straight' },
+          fill: { type: 'gradient', gradient: { shadeIntensity: 1, opacityFrom: 0.5, opacityTo: 0 } },
+          series: [{
+            name: 'series1',
+            data: [
+              75, 30, 60, 35, 60,
+              55, 45, 37, 25, 30,
+              45, 65, 50, 25, 30,
+              35, 25, 20, 15, 10,
+              35, 25, 20, 15, 10,
+              15, 20, 25, 30, 60,
+            ]
+          }],
+          colors: ['#e64141'],
+          xaxis: {
+            type: 'datetime',
+            categories: [
+              '2018-08-19T00:00:00', '2018-08-20T00:00:00', '2018-08-21T00:00:00', '2018-08-22T00:00:00', '2018-08-23T00:00:00',
+              '2018-08-24T00:00:00', '2018-08-25T00:00:00', '2018-08-26T00:00:00', '2018-08-27T00:00:00', '2018-08-28T00:00:00',
+              '2018-08-29T00:00:00', '2018-08-30T00:00:00', '2018-08-31T00:00:00', '2018-09-01T00:00:00', '2018-09-02T00:00:00',
+              '2018-09-03T00:00:00', '2018-09-04T00:00:00', '2018-09-05T00:00:00', '2018-09-06T00:00:00', '2018-09-07T00:00:00',
+              '2018-09-08T00:00:00', '2018-09-09T00:00:00', '2018-09-10T00:00:00', '2018-09-11T00:00:00', '2018-09-12T00:00:00',
+              '2018-09-13T00:00:00', '2018-09-14T00:00:00', '2018-09-15T00:00:00', '2018-09-16T00:00:00', '2018-09-17T00:00:00',
+            ]
+          },
+          tooltip: { x: { format: 'dd/MM/yy HH:mm' } }
         },
         heat : [{
           "date": "2021-01-01",
